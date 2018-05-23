@@ -84,7 +84,7 @@ class Coordinador extends CI_Controller {
 			$crud->set_relation('id_departamento','departamento','nombre')
 					->set_relation('tipo','tipo_pregunta','descripcion')
 					->set_relation('privilegio','privilegios','descripcion');
-			$crud->unset_add();
+			// $crud->unset_read();
 			$crud->columns('pregunta','tipo','privilegio','id_departamento');
 			$output = $crud->render();
 
@@ -148,8 +148,8 @@ class Coordinador extends CI_Controller {
 	
 	public function ver_encuestas($id){
 		try{
-			$this->load->model('M_encuestas');
-			$datos['encuestas']=$this->M_encuestas->getEncuesta($id);
+			$this->load->model('encuestas');
+			$datos['encuestas']=$this->encuestas->getEncuesta($id);
 			// print_r($datos);
 			$this->load->view('encuesta',$datos);
 
@@ -176,7 +176,17 @@ class Coordinador extends CI_Controller {
 		}catch(Exception $e){
 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
 		}
-	}	
+	}
+
+	public function correos(){
+		try{
+			$this->load->view('correo');
+
+
+		}catch(Exception $e){
+			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+	}
 	
 	function callback_test1($post_array){
 		//die(var_dump($post_array));

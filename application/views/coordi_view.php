@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-	    <base href="<?= base_url() ?>">
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="">
@@ -9,7 +8,7 @@
         <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 		
 
-        <?php $usu = $this->session->userdata('nombre');?>
+<?php $usu = $this->session->userdata('nombre');?>
 		
 		<?php if (isset($css_files)): ?>
     		<?php foreach($css_files as $file): ?>
@@ -40,25 +39,14 @@
 	<body>
 		<?php if(isset($usu)){?>
 			<div id="wrapper" class="active">  
-							<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a>
-					</div>
-					<ul class="nav navbar-right top-nav">
-					 <?php 
-								echo "<li><a>".$usu."</a></li>";
-							?>	
-					    <li>
-						<a href="/Welcome/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"> Salir</span></a>
-				    	</li>
-			    	</ul>
-				</nav>
+				<div class="col-md-12 col-sm-12" id="bar">
+					<ul class="nav navbar-nav navbar-right">
+						<?php 
+							echo "<li><a>".$usu."</a></li>";
+						?>	
+						<li><a href="/Welcome/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"> Salir</span></a></li>
+					</ul>
+				</div>
 				<div id="sidebar-wrapper">
 					<div class="container-fluid contenedor--div">
 						<ul id="sidebar_menu" class="sidebar-nav">
@@ -66,18 +54,11 @@
 						</ul>
 						<ul class="sidebar-nav" id="sidebar">
 							<li><a href="/Coordinador/ver_egresados">Egresados<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-							<li><a href="/Coordinador/ver_empresas">Empresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>							
+							<li><a href="/Coordinador/ver_empresas">Emrpresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>							
 							<li><a href="/Coordinador/ver_preguntas">Preguntas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<li><a href="/Coordinador/crear_encuestas">Encuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>	
 							<li><a href="#">Respuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-							<li><a data-toggle="collapse" data-target="#avisos">Avisos<span class="sub_icon glyphicon glyphicon-link"></span></a>
-								<ul id="avisos" class="collapse">
-									<li><a href="">Titulación</a></li>
-									<li><a href="">Bolsa de trabajo</a></li>
-									<li><a href="">Cursos</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Avisos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+							<li><a href="/Coordinador/correos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 						</ul>
 					</div>	
 				</div>
