@@ -138,9 +138,6 @@
 #id_usu_field_box {
 	display: none !important;
 }
-#id_departamento_field_box{
-	display: none;
-}
 
 @media (max-width:767px) {
 	#wrapper {

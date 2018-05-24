@@ -40,31 +40,31 @@ class Coordinador extends CI_Controller {
 		}
 	}
 	
-	public function ver_usuarios (){
-		try{
-			$crud = new grocery_CRUD();
+	// public function ver_usuarios (){
+		// try{
+			// $crud = new grocery_CRUD();
 
-			$crud->set_theme('flexigrid');
-			$crud->set_table('usuario');
-			$crud->where('id_tipo',2);
-			$crud->unset_columns('contraseña');
-			$crud->unset_fields('id_tipo');
-			$crud->display_as('nombre','Nombre')
-					->display_as('usuario','Usuario')
-					->display_as('contraseña','Contraseña')
-					->display_as('id_departamento','Departamento');
-			$crud->set_relation('id_departamento','departamento','nombre');		
-			$crud->set_relation('id_tipo','tipo_usuario','descripcion');
-			$crud->set_subject('Usuario');
+			// $crud->set_theme('flexigrid');
+			// $crud->set_table('usuario');
+			// $crud->where('id_tipo',2);
+			// $crud->unset_columns('contraseña');
+			// $crud->unset_fields('id_tipo');
+			// $crud->display_as('nombre','Nombre')
+					// ->display_as('usuario','Usuario')
+					// ->display_as('contraseña','Contraseña')
+					// ->display_as('id_departamento','Departamento');
+			// $crud->set_relation('id_departamento','departamento','nombre');		
+			// $crud->set_relation('id_tipo','tipo_usuario','descripcion');
+			// $crud->set_subject('Usuario');
 			
-			$output = $crud->render();
+			// $output = $crud->render();
 
-			$this->_example_output($output);
+			// $this->_example_output($output);
 
-		}catch(Exception $e){
-			show_error($e->getMessage().' --- '.$e->getTraceAsString());
-		}
-	}
+		// }catch(Exception $e){
+			// show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		// }
+	// }
 	
 	public function ver_preguntas(){
 		try{
@@ -75,17 +75,13 @@ class Coordinador extends CI_Controller {
 			$crud->set_table('preguntas');	
 			$crud->where($where);
 			$crud->set_subject('Pregunta');
-			// $crud->field_type('tipo','dropdown',
-			// array('1' => 'Opcion multiple', '2' => 'Abierta'));
-			// $crud->field_type('privilegio','dropdown',
-			// array('1' => 'Global', '2' => 'Especifica'));
 			$crud->display_as('id_departamento','Departamento');
 			$crud->callback_before_insert(array($this,'callback_test2'));
 			$crud->set_relation('id_departamento','departamento','nombre')
 					->set_relation('tipo','tipo_pregunta','descripcion')
 					->set_relation('privilegio','privilegios','descripcion');
-			// $crud->unset_read();
 			$crud->columns('pregunta','tipo','privilegio','id_departamento');
+			$crud->unset_add();
 			$output = $crud->render();
 
 			$this->_example_output($output);
@@ -148,11 +144,9 @@ class Coordinador extends CI_Controller {
 	
 	public function ver_encuestas($id){
 		try{
-			$this->load->model('encuestas');
-			$datos['encuestas']=$this->encuestas->getEncuesta($id);
-			// print_r($datos);
+			$this->load->model('M_encuestas');
+			$datos['encuestas']=$this->M_encuestas->getEncuesta($id);
 			$this->load->view('encuesta',$datos);
-
 
 		}catch(Exception $e){
 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
@@ -189,7 +183,6 @@ class Coordinador extends CI_Controller {
 	}
 	
 	function callback_test1($post_array){
-		//die(var_dump($post_array));
 		$usuario = $this->session->userdata('tipo');
 		$departamento = $this->session->userdata('depa');
 		$post_array['id_usu'] = $usuario;
@@ -198,8 +191,6 @@ class Coordinador extends CI_Controller {
 		return $post_array;
 	}
 	function callback_test2($post_array){
-		//die(var_dump($post_array));
-		// $usuario = $this->session->userdata('tipo');
 		$departamento = $this->session->userdata('depa');
 		// $post_array['id_usu'] = $usuario;
 		$post_array['id_departamento'] = $departamento;

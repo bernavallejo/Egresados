@@ -49,11 +49,14 @@
 							<li><a href="/Admin/ver_egresados">Egresados<span class="sub_icon glyphicon glyphicon-link"></span></a></li>	
 							<li><a href="/Admin/ver_usuarios">Usuarios<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<li><a href="/Admin/ver_carreras">Carreras<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-							<li><a href="/Admin/ver_empresas">Emrpresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+							<li><a href="/Admin/ver_empresas">Empresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<li><a href="/Admin/ver_preguntas">Preguntas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<li><a href="/Admin/crear_encuestas">Encuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<li><a href="#">Respuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-							<li><a href="#">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+							<li><a href="/Admin/correos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+							<li><a href="/Admin/correos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+							<li><a href="/Admin/correos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+							<li><a href="/Admin/correos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 						</ul>
 					</div>
 					<div id="page-content-wrapper">

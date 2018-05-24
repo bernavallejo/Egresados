@@ -9,50 +9,16 @@
 		
 
         <?php $usu = $this->session->userdata('nombre');?>
-			<!--  -->
-			<link type="text/css" rel="stylesheet" href="/assets/grocery_crud/themes/flexigrid/css/flexigrid.css" />
-		<!--  -->
-			<link type="text/css" rel="stylesheet" href="/assets/grocery_crud/css/jquery_plugins/fancybox/jquery.fancybox.css" />
-		<!--  -->
-			<link type="text/css" rel="stylesheet" href="/assets/grocery_crud/css/ui/simple/jquery-ui-1.10.1.custom.min.css" />
-		<!--  -->
-		<!--  -->
-			<script src="/assets/grocery_crud/js/jquery-1.11.1.min.js"></script>
-		<!--  -->
-			<script src="/assets/grocery_crud/js/common/list.js"></script>
-		<!--  -->
-			<script src="/assets/grocery_crud/themes/flexigrid/js/cookies.js"></script>
-		<!--  -->
-			<script src="/assets/grocery_crud/themes/flexigrid/js/flexigrid.js"></script>
-		<!--  -->
-			<script src="/assets/grocery_crud/js/jquery_plugins/jquery.form.min.js"></script>
-		<!--  -->
-			<script src="/assets/grocery_crud/js/jquery_plugins/jquery.numeric.min.js"></script>
-		<!--  -->
-			<script src="/assets/grocery_crud/themes/flexigrid/js/jquery.printElement.min.js"></script>
-		<!--  -->
-			<script src="/assets/grocery_crud/js/jquery_plugins/jquery.fancybox-1.3.4.js"></script>
-		<!--  -->
-			<script src="/assets/grocery_crud/js/jquery_plugins/jquery.easing-1.3.pack.js"></script>
-		<!--  -->
-			<script src="/assets/grocery_crud/js/jquery_plugins/ui/jquery-ui-1.10.3.custom.min.js"></script>
-		<!-- <!-- <?php foreach($css_files as $file): ?> -->
-			<!-- <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" /> -->
-		<!-- <!-- <?php endforeach; ?> -->
-		<!-- <!-- <?php foreach($js_files as $file): ?> -->
-			<!-- <script src="<?php echo $file; ?>"></script> -->
-		<!-- <!-- <?php endforeach; ?> -->
-        <!-- <!-- Bootstrap core CSS --> 
-        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-        <!-- <!--external css-->
-        <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+		<!-- include libraries(jQuery, bootstrap) -->		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>	
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+										
+        <!-- <!-- Bootstrap core CSS -->         
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">		
 
         <!-- Custom styles for this template -->
-        <!--<link href="assets/css/style.css" rel="stylesheet">
-        <link href="assets/css/style-responsive.css" rel="stylesheet">-->
         <link href="/assets/css/portal_admin.css" rel="stylesheet">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
 		
 	</head>
 	<body>
@@ -74,18 +40,26 @@
 						<ul class="sidebar-nav" id="sidebar">
 							<?php if ($this->session->userdata('tipo') == 1){?>
 								<li><a href="/Admin/ver_egresados">Egresados<span class="sub_icon glyphicon glyphicon-link"></span></a></li>	
-								<li><a href="/Admin/ver_empresas">Emrpresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/ver_usuarios">Usuarios<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/ver_carreras">Carreras<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/ver_empresas">Empresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Admin/ver_preguntas">Preguntas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Admin/crear_encuestas">Encuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="#">Respuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="#">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/correos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/correos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/correos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/correos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<?php }else { ?>
 								<li><a href="/Coordinador/ver_egresados">Egresados<span class="sub_icon glyphicon glyphicon-link"></span></a></li>	
-								<li><a href="/Coordinador/ver_empresas">Emrpresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/ver_empresas">Empresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Coordinador/ver_preguntas">Preguntas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Coordinador/crear_encuestas">Encuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="#">Respuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="#">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/correos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/correos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/correos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/correos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<?php } ?>	
 						</ul>
 					</div>	
@@ -98,37 +72,7 @@
 								<?php foreach ($encuestas as $en){
 									// print_r ($en);
 									if ($en->privilegio == 1):
-										echo '<div class=col-sm-offset-1 col-sm-10>'.($en->pregunta).'</div><br><br>';
-										// echo ($en->tipo);
-										// echo ($en->respuesta1);
-										if( $en->tipo == 1):{
-											if( isset( $en->respuesta1)):
-												?><div class="col-sm-offset-2 col-sm-4"><input type="radio" name="respuesta"> <?php echo ($en->respuesta1).'</div>';
-											endif;	
-											if( isset( $en->respuesta2)):
-												?><input type="radio" name="respuesta"> <?php echo ($en->respuesta2);
-											endif;
-											if( isset( $en->respuesta3)):
-												?><input type="radio" name="respuesta"> <?php echo ($en->respuesta3);
-											endif;
-											if( isset( $en->respuesta4)):
-												?><input type="radio" name="respuesta"> <?php echo ($en->respuesta4);
-											endif;
-											if( isset( $en->respuesta5)):
-												?><input type="radio" name="respuesta"> <?php echo ($en->respuesta5);
-											endif;	
-										} else:
-											?>
-											<div class="col-sm-offset-1 col-sm-10"><input type="text" style="width:100%"disabled></div>
-											<?php
-											endif;
-										echo '<br><br>';
-									endif;
-								}
-								echo '<br><br>';
-								foreach ($encuestas as $en){
-									if ($en->privilegio == 2):
-										echo '<div class=col-sm-offset-1 col-sm-10>'.($en->pregunta).'</div><br><br>';
+										echo '<div class=col-sm-offset-1 col-sm-11>'.($en->pregunta).'</div><div><br></div>';
 										// echo ($en->tipo);
 										// echo ($en->respuesta1);
 										if( $en->tipo == 1):{
@@ -139,20 +83,50 @@
 												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta2).'</div>';
 											endif;
 											if( isset( $en->respuesta3)):
-												?><input type="radio" name="respuesta"> <?php echo ($en->respuesta3);
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta3).'</div>';
 											endif;
 											if( isset( $en->respuesta4)):
-												?><input type="radio" name="respuesta"> <?php echo ($en->respuesta4);
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta4).'</div>';
 											endif;
 											if( isset( $en->respuesta5)):
-												?><input type="radio" name="respuesta"> <?php echo ($en->respuesta5);
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
 											endif;	
 										} else:
 											?>
 											<div class="col-sm-offset-1 col-sm-10"><input type="text" style="width:100%"disabled></div>
 											<?php
 											endif;
-										echo '<br><br>';
+										echo '<div><br><br></div>';
+									endif;
+								}
+								echo '<br><br>';
+								foreach ($encuestas as $en){
+									if ($en->privilegio == 2):
+										echo '<div class=col-sm-offset-1 col-sm-11>'.($en->pregunta).'</div><div><br></div>';
+										// echo ($en->tipo);
+										// echo ($en->respuesta1);
+										if( $en->tipo == 1):{
+											if( isset( $en->respuesta1)):
+												?><div class="col-sm-offset-2 col-sm-2"><input type="radio"> <?php echo ($en->respuesta1).'</div>';
+											endif;	
+											if( isset( $en->respuesta2)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta2).'</div>';
+											endif;
+											if( isset( $en->respuesta3)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta3).'</div>';
+											endif;
+											if( isset( $en->respuesta4)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta4).'</div>';
+											endif;
+											if( isset( $en->respuesta5)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
+											endif;	
+										} else:
+											?>
+											<div class="col-sm-offset-1 col-sm-10"><input type="text" style="width:100%"disabled></div>
+											<?php
+											endif;
+										echo '<div><br><br></div>';
 									endif;
 									}
 								?>

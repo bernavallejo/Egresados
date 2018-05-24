@@ -22,16 +22,17 @@ class Admin extends CI_Controller {
 			$crud->set_theme('flexigrid');
 			$crud->set_table('egresados');
 			$crud->set_subject('Egresado');
-			$crud->set_relation('carrera','carrera','nombre');
+			$crud->set_relation('id_carrera','carrera','nombre');
 			$crud->display_as('domicilio_calle','Calle y numero')
 					->display_as('domicilio_colonia','Colonia')
 					->display_as('domicilio_cp','Codigo Postal')
 					->display_as('domicilio_municipio','Municipio')
 					->display_as('domicilio_estado','Estado')
+					->display_as('id_carrera','Carrera')
 					->display_as('id_empresa','Empresa');		
 			$crud->set_relation_n_n('Empresa', 'egresado2empresa', 'empresa', 'id_egresado', 'id_empresa', 'nombre');
 			$crud->set_relation_n_n('Avisos', 'egresados2avisos', 'avisos', 'id_egresado', 'id_aviso', 'descripcion');			
-			$crud->columns('nombre','carrera','estatus','correo','facebook');
+			$crud->columns('nombre','id_carrera','estatus','correo','facebook');
 			$crud->required_fields('nombre','carrera','domicilio_calle','domicilio_cp','domicilio_municipio','domicilio_estado','correo');
 			$output = $crud->render();
 
@@ -77,16 +78,11 @@ class Admin extends CI_Controller {
 			$crud = new grocery_CRUD();
 
 			$crud->set_theme('flexigrid');
-			$crud->set_table('preguntas');		
-			// $crud->field_type('tipo','dropdown',
-			// array('1' => 'Opcion multiple', '2' => 'Abierta'));
-			// $crud->field_type('privilegio','dropdown',
-			// array('1' => 'Global', '2' => 'Especifica'));
+			$crud->set_table('preguntas');
 			$crud->display_as('id_departamento','Departamento');
 			$crud->set_relation('id_departamento','departamento','nombre')
 					->set_relation('tipo','tipo_pregunta','descripcion')
 					->set_relation('privilegio','privilegios','descripcion');
-			// $crud->unset_read();
 			$crud->columns('pregunta','tipo','privilegio','id_departamento');
 			$output = $crud->render();
 
@@ -197,6 +193,16 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	public function correos(){
+		try{
+			$this->load->view('correo');
+
+
+		}catch(Exception $e){
+			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+	}
+	
 	
 	function callback_test1($post_array){
 		//die(var_dump($post_array));
@@ -207,12 +213,6 @@ class Admin extends CI_Controller {
 		
 		return $post_array;
 	}
-	// function encrypt_password_callback($post_array) {
-		// $key = 'tecnologico-de-colima';
-		// $post_array['contraseña'] = $this->encrypt->encode($post_array['contraseña'], $key);
-		 
-		// return $post_array;
-	// }
 	function encrypt_password_callback($post_array, $primary_key) {
 			 
 		//Encrypt password only if is not empty. Else don't change the password to an empty field

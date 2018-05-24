@@ -16,11 +16,8 @@
         <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
         <!-- Custom styles for this template -->
-        <!--<link href="assets/css/style.css" rel="stylesheet">
-        <link href="assets/css/style-responsive.css" rel="stylesheet">-->
         <link href="/assets/css/login.css" rel="stylesheet">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
     
     </head>
     <body>
@@ -42,12 +39,9 @@
                             <br><br>
                             <span class="group-btn">
                                 <button type="submit" class="btn btn-primary btn-md">Iniciar  <i class="fa fa-sign-in"></i></button>
-                                <!-- <a href="" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>-->
                             </span>
                         </div>
-                    
                     </form>
-                    
                 </div>
             </div>
         </div>

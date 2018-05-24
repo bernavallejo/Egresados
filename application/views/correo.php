@@ -45,18 +45,26 @@
 						<ul class="sidebar-nav" id="sidebar">
 							<?php if ($this->session->userdata('tipo') == 1){?>
 								<li><a href="/Admin/ver_egresados">Egresados<span class="sub_icon glyphicon glyphicon-link"></span></a></li>	
-								<li><a href="/Admin/ver_empresas">Emrpresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/ver_usuarios">Usuarios<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/ver_carreras">Carreras<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/ver_empresas">Empresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Admin/ver_preguntas">Preguntas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Admin/crear_encuestas">Encuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="#">Respuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="#">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/correos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/correos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/correos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/correos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<?php }else { ?>
 								<li><a href="/Coordinador/ver_egresados">Egresados<span class="sub_icon glyphicon glyphicon-link"></span></a></li>	
-								<li><a href="/Coordinador/ver_empresas">Emrpresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/ver_empresas">Empresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Coordinador/ver_preguntas">Preguntas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Coordinador/crear_encuestas">Encuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="#">Respuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="#">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/correos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/correos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/correos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/correos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<?php } ?>	
 						</ul>
 					</div>	
@@ -67,7 +75,7 @@
 							<div class="col-md-9">
 								<div class="panel panel-default">
 									<div class="panel-body message">
-										<p class="text-center">New Message</p>
+										<p class="text-center"><?php if(isset($message)) echo $message ?></p>
 										<form class="form-horizontal" role="form" autocomplete="off">
 											<div class="form-group">
 												<label for="to" class="col-sm-1 control-label">To:</label>
@@ -97,9 +105,9 @@
 											
 											<div class="col-sm-11 col-sm-offset-1">																					
 												<div class="form-group">	
-													<button type="submit" class="btn btn-success">Enviar</button>
-													<button type="reset" class="btn btn-default">Borrar</button>
 													<button type="button" class="btn btn-danger">Cancelar</button>
+													<button type="reset" class="btn btn-default">Borrar</button>
+													<button type="submit" class="btn btn-success">Enviar</button>
 												</div>
 											</div>	
 										</form>
