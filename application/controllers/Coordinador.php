@@ -5,6 +5,7 @@ class Coordinador extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('m_email');
 
 	}
 	public function _example_output($output = null){
@@ -21,15 +22,17 @@ class Coordinador extends CI_Controller {
 			$crud->set_theme('flexigrid');
 			$crud->set_table('egresados');
 			$crud->set_subject('Egresado');
-			$crud->set_relation('carrera','carrera','nombre');
+			$crud->set_relation('id_carrera','carrera','nombre');
 			$crud->display_as('domicilio_calle','Calle y numero')
 					->display_as('domicilio_colonia','Colonia')
 					->display_as('domicilio_cp','Codigo Postal')
 					->display_as('domicilio_municipio','Municipio')
+					->display_as('id_carrera','Carrera')
+					->display_as('fecha_egreso','Fecha de egreso')
 					->display_as('domicilio_estado','Estado');
 			$crud->set_relation_n_n('Empresa', 'egresado2empresa', 'empresa', 'id_egresado', 'id_empresa', 'nombre');
 			$crud->set_relation_n_n('Avisos', 'egresados2avisos', 'avisos', 'id_egresado', 'id_aviso', 'descripcion');
-			$crud->columns('nombre','carrera','estatus','correo','facebook');		
+			$crud->columns('nombre','id_carrera','estatus','fecha_egreso','correo','facebook');		
 			$crud->required_fields('nombre','carrera','domicilio_calle','domicilio_cp','domicilio_municipio','domicilio_estado','correo');
 			$output = $crud->render();
 
@@ -39,32 +42,6 @@ class Coordinador extends CI_Controller {
 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
 		}
 	}
-	
-	// public function ver_usuarios (){
-		// try{
-			// $crud = new grocery_CRUD();
-
-			// $crud->set_theme('flexigrid');
-			// $crud->set_table('usuario');
-			// $crud->where('id_tipo',2);
-			// $crud->unset_columns('contraseña');
-			// $crud->unset_fields('id_tipo');
-			// $crud->display_as('nombre','Nombre')
-					// ->display_as('usuario','Usuario')
-					// ->display_as('contraseña','Contraseña')
-					// ->display_as('id_departamento','Departamento');
-			// $crud->set_relation('id_departamento','departamento','nombre');		
-			// $crud->set_relation('id_tipo','tipo_usuario','descripcion');
-			// $crud->set_subject('Usuario');
-			
-			// $output = $crud->render();
-
-			// $this->_example_output($output);
-
-		// }catch(Exception $e){
-			// show_error($e->getMessage().' --- '.$e->getTraceAsString());
-		// }
-	// }
 	
 	public function ver_preguntas(){
 		try{
@@ -180,6 +157,29 @@ class Coordinador extends CI_Controller {
 		}catch(Exception $e){
 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
 		}
+	}
+	
+	public function send_mail(){
+		
+		$body =   'Estes es el cuerpo del correo';
+		
+		$param= array(
+		'to' => 'berna_10_66@hotmail.com',
+		'subject' => 'Asunto',
+		'body' => $body
+		);
+		
+		$is_sended = $this->m_email->send( $param['to'], $param['subject'], $param['body'] );
+		
+		if ( $is_sended ){
+			echo "Succes sended email";
+		}
+		else{
+			echo "failed sended email";
+		}
+		
+		exit;
+		
 	}
 	
 	function callback_test1($post_array){

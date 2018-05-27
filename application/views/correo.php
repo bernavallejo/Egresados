@@ -76,25 +76,25 @@
 								<div class="panel panel-default">
 									<div class="panel-body message">
 										<p class="text-center"><?php if(isset($message)) echo $message ?></p>
-										<form class="form-horizontal" role="form" autocomplete="off">
-											<div class="form-group">
-												<label for="to" class="col-sm-1 control-label">To:</label>
-												<div class="col-sm-11">
-													<input type="email" class="form-control select2-offscreen" id="to" placeholder="Type email" tabindex="-1">
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="cc" class="col-sm-1 control-label">CC:</label>
-												<div class="col-sm-11">
-													<input type="email" class="form-control select2-offscreen" id="cc" placeholder="Type email" tabindex="-1">
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="bcc" class="col-sm-1 control-label">BCC:</label>
-												<div class="col-sm-11">
-													<input type="email" class="form-control select2-offscreen" id="bcc" placeholder="Type email" tabindex="-1">
-												</div>
-											</div>
+										<form class="form-horizontal" method="post" role="form" autocomplete="off" action="/Coordinador/send_mail">
+											<!-- <div class="form-group"> -->
+												<!-- <label for="to" class="col-sm-1 control-label">To:</label> -->
+												<!-- <div class="col-sm-11"> -->
+													<!-- <input type="email" class="form-control select2-offscreen" id="to" placeholder="Type email" tabindex="-1"> -->
+												<!-- </div> -->
+											<!-- </div> -->
+											<!-- <div class="form-group"> -->
+												<!-- <label for="cc" class="col-sm-1 control-label">CC:</label> -->
+												<!-- <div class="col-sm-11"> -->
+													<!-- <input type="email" class="form-control select2-offscreen" id="cc" placeholder="Type email" tabindex="-1"> -->
+												<!-- </div> -->
+											<!-- </div> -->
+											<!-- <div class="form-group"> -->
+												<!-- <label for="bcc" class="col-sm-1 control-label">BCC:</label> -->
+												<!-- <div class="col-sm-11"> -->
+													<!-- <input type="email" class="form-control select2-offscreen" id="bcc" placeholder="Type email" tabindex="-1"> -->
+												<!-- </div> -->
+											<!-- </div> -->
 											<div class="form-group">
 												<div class="col-sm-1"></div>
 												<div class="col-sm-11">
