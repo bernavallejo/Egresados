@@ -6,6 +6,7 @@ class Coordinador extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('m_email');
+		//existe la sesion ? veo lo que seg :  me voy al login;	
 
 	}
 	public function _example_output($output = null){
@@ -162,9 +163,10 @@ class Coordinador extends CI_Controller {
 	public function send_mail(){
 		
 		$body =   'Estes es el cuerpo del correo';
-		
+		//obtenr la lista d elos correos a manara y pasar al array
+		$list_to_Array =  array('berna_10_66@hotmail.com')
 		$param= array(
-		'to' => 'berna_10_66@hotmail.com',
+		'to' => $list_to_Array,
 		'subject' => 'Asunto',
 		'body' => $body
 		);
