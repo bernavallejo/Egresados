@@ -77,12 +77,18 @@
 									<div class="panel-body message">
 										<p class="text-center"><?php if(isset($message)) echo $message ?></p>
 										<form class="form-horizontal" method="post" role="form" autocomplete="off" action="/Coordinador/send_mail">
-											<!-- <div class="form-group"> -->
-												<!-- <label for="to" class="col-sm-1 control-label">To:</label> -->
-												<!-- <div class="col-sm-11"> -->
-													<!-- <input type="email" class="form-control select2-offscreen" id="to" placeholder="Type email" tabindex="-1"> -->
-												<!-- </div> -->
-											<!-- </div> -->
+											<div class="form-group">
+												<label for="to" class="col-sm-1 control-label">Para:</label>
+												<div class="col-sm-11">
+													<input type="email" multiple class="form-control select2-offscreen" id="to" tabindex="-1" name="to">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="to" class="col-sm-1 control-label">Asunto:</label>
+												<div class="col-sm-11">
+													<input type="text" class="form-control select2-offscreen" id="subject" placeholder="Agregar un asunto" tabindex="-1" name="subject">
+												</div>
+											</div>
 											<!-- <div class="form-group"> -->
 												<!-- <label for="cc" class="col-sm-1 control-label">CC:</label> -->
 												<!-- <div class="col-sm-11"> -->

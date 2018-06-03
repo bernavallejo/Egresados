@@ -108,7 +108,8 @@ class Coordinador extends CI_Controller {
 			$crud->fields('id_usu','id_departamento','titulo','Preguntas');
 			$crud->columns('titulo','Preguntas');
 			$crud->unset_read();
-			$crud->add_action('ver', '', '/Coordinador/ver_encuestas', 'read-icon');
+			$crud->add_action('Ver Encuesta', '', '/Coordinador/ver_encuestas', 'read-icon');
+			$crud->add_action('enviar', '', '/Coordinador/correos','glyphicon glyphicon-send');
 			$crud->callback_before_insert(array($this,'callback_test1'));
 			$crud->required_fields('titulo');
 			$output = $crud->render();
@@ -154,7 +155,6 @@ class Coordinador extends CI_Controller {
 		try{
 			$this->load->view('correo');
 
-
 		}catch(Exception $e){
 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
 		}
@@ -162,25 +162,34 @@ class Coordinador extends CI_Controller {
 	
 	public function send_mail(){
 		
-		$body =   'Estes es el cuerpo del correo';
-		//obtenr la lista d elos correos a manara y pasar al array
-		$list_to_Array =  array('berna_10_66@hotmail.com')
-		$param= array(
-		'to' => $list_to_Array,
-		'subject' => 'Asunto',
-		'body' => $body
-		);
+		//validar con post
+		//para que obtengas el mensaje
 		
-		$is_sended = $this->m_email->send( $param['to'], $param['subject'], $param['body'] );
-		
-		if ( $is_sended ){
-			echo "Succes sended email";
+		// var_dump($this->input->post()); exit;
+		if ( $this->input->post() ){
+			// $body =   'Estes es el cuerpo del correo';
+			//obtenr la lista d elos correos a manara y pasar al array
+			// $list_to_Array =  array('berna_10_66@hotmail.com');
+
+			$param= array(
+				'to' => $this->input->post('to'),
+				'subject' => $this->input->post('subject'),
+				'body' => $this->input->post('body')
+			);
+			// var_dump($param); exit;
+			$is_sended = $this->m_email->send( $param['to'], $param['subject'], $param['body'] );
+			
+			if ( $is_sended ){
+				// echo "Succes sended email";
+				$this->load->view('correo');
+			}
+			else{
+				echo "failed sended email";
+			}
+			// var_dump( $this->input->post()  );exit;
+		}else{
+			echo "no hago algo"; exit;
 		}
-		else{
-			echo "failed sended email";
-		}
-		
-		exit;
 		
 	}
 	

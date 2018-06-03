@@ -21,7 +21,7 @@
 				$config['protocol'] = 'smtp';
 				 
 			   //El servidor de correo que utilizaremos
-				$config["smtp_host"] = 'smtp-.outlook.com';
+				$config["smtp_host"] = 'smtp.live.com';
 				 
 			   //Nuestro usuario
 				$config["smtp_user"] = $this->email_smtp_from;
@@ -32,9 +32,8 @@
 			   //El puerto que utilizará el servidor smtp
 				$config["smtp_port"] = '587';
 				
-				// $config['mailtype'] = 'html';
+				$config['mailtype'] = 'html';
 								
-				
 			   //El juego de caracteres a utilizar
 				$config['charset'] = 'utf-8';
 	
@@ -42,11 +41,10 @@
 			   $config['validate'] = true;
 			}else{
 				$config['protocol'] = 'send_mail';
-				
+				$config['mailtype'] = 'html';
+				$config['charset'] = 'utf-8';
 			}
 			return $config;
-					       
-       
 			
 		}
 		
