@@ -77,7 +77,7 @@
 										// echo ($en->respuesta1);
 										if( $en->tipo == 1):{
 											if( isset( $en->respuesta1)):
-												?><div class="col-sm-offset-2 col-sm-2"><input type="radio"> <?php echo ($en->respuesta1).'</div>';
+												?><div class="col-sm-offset-1 col-sm-2"><input type="radio"> <?php echo ($en->respuesta1).'</div>';
 											endif;	
 											if( isset( $en->respuesta2)):
 												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta2).'</div>';
@@ -90,7 +90,28 @@
 											endif;
 											if( isset( $en->respuesta5)):
 												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
-											endif;	
+											endif;
+											if( isset( $en->respuesta6)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
+											endif;
+											if( isset( $en->respuesta7)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
+											endif;
+											if( isset( $en->respuesta8)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
+											endif;
+											if( isset( $en->respuesta9)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
+											endif;
+											if( isset( $en->respuesta10)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
+											endif;
+											if( isset( $en->respuesta11)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
+											endif;
+											if( isset( $en->respuesta12)):
+												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
+											endif;
 										} else:
 											?>
 											<div class="col-sm-offset-1 col-sm-10"><input type="text" style="width:100%"disabled></div>
@@ -107,7 +128,7 @@
 										// echo ($en->respuesta1);
 										if( $en->tipo == 1):{
 											if( isset( $en->respuesta1)):
-												?><div class="col-sm-offset-2 col-sm-2"><input type="radio"> <?php echo ($en->respuesta1).'</div>';
+												?><div class="col-sm-offset-1 col-sm-2"><input type="radio"> <?php echo ($en->respuesta1).'</div>';
 											endif;	
 											if( isset( $en->respuesta2)):
 												?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta2).'</div>';

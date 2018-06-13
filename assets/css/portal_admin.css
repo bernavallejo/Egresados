@@ -139,6 +139,10 @@
 	display: none !important;
 }
 
+#id_departamento_field_box {
+	display: none !important;
+}
+
 @media (max-width:767px) {
 	#wrapper {
 		padding-left: 70px;
