@@ -58,10 +58,10 @@
 							<li><a href="/Coordinador/ver_preguntas">Preguntas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<li><a href="/Coordinador/crear_encuestas">Encuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>	
 							<li><a href="#">Respuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-							<li><a href="/Coordinador/correos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-							<li><a href="/Coordinador/correos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-							<li><a href="/Coordinador/correos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-							<li><a href="/Coordinador/correos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+							<li><a href="/Coordinador/avisos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+							<li><a href="/Coordinador/avisos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+							<li><a href="/Coordinador/avisos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+							<li><a href="/Coordinador/avisos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 						</ul>
 					</div>	
 				</div>

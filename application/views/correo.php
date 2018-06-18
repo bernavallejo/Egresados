@@ -51,20 +51,20 @@
 								<li><a href="/Admin/ver_preguntas">Preguntas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Admin/crear_encuestas">Encuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="#">Respuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="/Admin/correos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="/Admin/correos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="/Admin/correos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="/Admin/correos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/avisos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/avisos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/avisos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Admin/avisos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<?php }else { ?>
 								<li><a href="/Coordinador/ver_egresados">Egresados<span class="sub_icon glyphicon glyphicon-link"></span></a></li>	
 								<li><a href="/Coordinador/ver_empresas">Empresas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Coordinador/ver_preguntas">Preguntas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="/Coordinador/crear_encuestas">Encuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 								<li><a href="#">Respuestas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="/Coordinador/correos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="/Coordinador/correos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="/Coordinador/correos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-								<li><a href="/Coordinador/correos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/avisos">Titulacion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/avisos">Cursos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/avisos">Bolsa de trabajo<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+								<li><a href="/Coordinador/avisos">Eventos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
 							<?php } ?>	
 						</ul>
 					</div>	

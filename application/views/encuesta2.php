@@ -26,90 +26,112 @@
 			<div class="page-content inset">
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
-						<form class="form-horizontal" method="post" role="form" autocomplete="off" action="/Coordinador/">	
+						<form class="form-horizontal" method="post" role="form" autocomplete="off" action="/Coordinador/get_encuesta">	
 							<br><br>
 							<?php foreach ($encuestas as $en){
-								// print_r ($en);
-								if ($en->privilegio == 1):
+								if ($en->privilegio == 1){
 									echo '<div class=col-sm-offset-1 col-sm-11>'.($en->pregunta).'</div><div><br></div>';
+									echo '<input type=hidden name=enc2pre' .($en->id) .' value='.($en->id).' </input>';
 									// echo ($en->tipo);
 									// echo ($en->respuesta1);
-									if( $en->tipo == 1):{
-										if( isset( $en->respuesta1)):
-											?><div class="col-sm-offset-1 col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta1).'</div>';
-										endif;	
-										if( isset( $en->respuesta2)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta2).'</div>';
-										endif;
-										if( isset( $en->respuesta3)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta3).'</div>';
-										endif;
-										if( isset( $en->respuesta4)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta4).'</div>';
-										endif;
-										if( isset( $en->respuesta5)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
-										endif;
-										if( isset( $en->respuesta6)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
-										endif;
-										if( isset( $en->respuesta7)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
-										endif;
-										if( isset( $en->respuesta8)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
-										endif;
-										if( isset( $en->respuesta9)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
-										endif;
-										if( isset( $en->respuesta10)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
-										endif;
-										if( isset( $en->respuesta11)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
-										endif;
-										if( isset( $en->respuesta12)):
-											?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
-										endif;
-										} else:
-											?>
-											<div class="col-sm-offset-1 col-sm-10"><input type="text" style="width:100%" name="respuesta"></div>
-											<?php
-										endif;
-										echo '<div><br><br></div>';
-									endif;
+									if( $en->tipo == 1){
+										if( isset( $en->respuesta1)){
+											?><div class="col-sm-offset-1 col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta1) ?>> <?php echo ($en->respuesta1).'</div>';
+										}
+										if( isset( $en->respuesta2)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta2) ?>> <?php echo ($en->respuesta2).'</div>';
+										}
+										if( isset( $en->respuesta3)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta3) ?>> <?php echo ($en->respuesta3).'</div>';
+										}
+										if( isset( $en->respuesta4)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta4) ?>> <?php echo ($en->respuesta4).'</div>';
+										}
+										if( isset( $en->respuesta5)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta5) ?>> <?php echo ($en->respuesta5).'</div>';
+										}
+										if( isset( $en->respuesta6)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta6) ?>> <?php echo ($en->respuesta6).'</div>';
+										}
+										if( isset( $en->respuesta7)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta7) ?>> <?php echo ($en->respuesta7).'</div>';
+										}
+										if( isset( $en->respuesta8)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta8) ?>> <?php echo ($en->respuesta8).'</div>';
+										}
+										if( isset( $en->respuesta9)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta9) ?>> <?php echo ($en->respuesta9).'</div>';
+										}
+										if( isset( $en->respuesta10)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta10) ?>> <?php echo ($en->respuesta10).'</div>';
+										}
+										if( isset( $en->respuesta11)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta11) ?>> <?php echo ($en->respuesta11).'</div>';
+										}
+										if( isset( $en->respuesta12)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta12) ?>> <?php echo ($en->respuesta12).'</div>';
+										}
 									}
-									echo '<br><br>';
-									foreach ($encuestas as $en){
-										if ($en->privilegio == 2):
-											echo '<div class=col-sm-offset-1 col-sm-11>'.($en->pregunta).'</div><div><br></div>';
-											// echo ($en->tipo);
-											// echo ($en->respuesta1);
-											if( $en->tipo == 1):{
-												if( isset( $en->respuesta1)):
-													?><div class="col-sm-offset-1 col-sm-2"><input type="radio"> <?php echo ($en->respuesta1).'</div>';
-												endif;	
-												if( isset( $en->respuesta2)):
-													?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta2).'</div>';
-												endif;
-												if( isset( $en->respuesta3)):
-													?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta3).'</div>';
-												endif;
-												if( isset( $en->respuesta4)):
-													?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta4).'</div>';
-												endif;
-												if( isset( $en->respuesta5)):
-													?><div class="col-sm-2"><input type="radio" name="respuesta"> <?php echo ($en->respuesta5).'</div>';
-												endif;	
-											} else:
+									else{
 										?>
-										<div class="col-sm-offset-1 col-sm-10"><input type="text" style="width:100%"></div>
+											<div class="col-sm-offset-1 col-sm-10"><input type="text" style="width:100%" name=<?php echo 'abierta' . $en->id_pregunta ?>> </div>
 										<?php
-										endif;
+									}
 									echo '<div><br><br></div>';
-								endif;
 								}
-							?>							
+							}?>								
+							<?php	echo '<br><br>';
+							foreach ($encuestas as $en){
+								if ($en->privilegio == 2){
+									echo '<div class=col-sm-offset-1 col-sm-11>'.($en->pregunta).'</div><div><br></div>';
+									echo '<input type=hidden name=enc2pre' .($en->id) .' value='.($en->id).' </input>';
+									if( $en->tipo == 1){
+										if( isset( $en->respuesta1)){
+											?><div class="col-sm-offset-1 col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta1) ?>> <?php echo ($en->respuesta1).'</div>';
+										}
+										if( isset( $en->respuesta2)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta2) ?>> <?php echo ($en->respuesta2).'</div>';
+										}
+										if( isset( $en->respuesta3)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta3) ?>> <?php echo ($en->respuesta3).'</div>';
+										}
+										if( isset( $en->respuesta4)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta4) ?>> <?php echo ($en->respuesta4).'</div>';
+										}
+										if( isset( $en->respuesta5)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta5) ?>> <?php echo ($en->respuesta5).'</div>';
+										}
+										if( isset( $en->respuesta6)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta6) ?>> <?php echo ($en->respuesta6).'</div>';
+										}
+										if( isset( $en->respuesta7)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta7) ?>> <?php echo ($en->respuesta7).'</div>';
+										}
+										if( isset( $en->respuesta8)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta8) ?>> <?php echo ($en->respuesta8).'</div>';
+										}
+										if( isset( $en->respuesta9)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta9) ?>> <?php echo ($en->respuesta9).'</div>';
+										}
+										if( isset( $en->respuesta10)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta10) ?>> <?php echo ($en->respuesta10).'</div>';
+										}
+										if( isset( $en->respuesta11)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta11) ?>> <?php echo ($en->respuesta11).'</div>';
+										}
+										if( isset( $en->respuesta12)){
+											?><div class="col-sm-2"><input type="radio" name=<?php echo 'multiple' . $en->id_pregunta ?> value=<?php echo ($en->respuesta12) ?>> <?php echo ($en->respuesta12).'</div>';
+										}
+									}
+									else{
+										?>
+										<div class="col-sm-offset-1 col-sm-10"><input type="text" style="width:100%" name=<?php echo 'abierta' . $en->id_pregunta ?>></div>
+										<?php
+									}
+									echo '<div><br><br></div>';
+								}	
+							}
+							?>
 							<div class="col-md-offset-10">
 								<button type="submit" class="btn btn-success">Enviar</button>
 							</div>
@@ -118,7 +140,6 @@
 				</div>
 			</div>		
 		</div>
-	</div>	
 	<!--<script src="/assets/js/jquery-3.2.1.min.js"></script>-->
 	<script src="/assets/js/admin.js"></script>
 	<!-- <script src="/assets/js/script.js"></script> -->

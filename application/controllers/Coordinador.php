@@ -153,7 +153,16 @@ class Coordinador extends CI_Controller {
 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
 		}
 	}
-
+	
+	public function avisos(){
+		try{
+			$this->load->view('correo');
+		}
+		catch(Exception $e){
+ 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+	}
+	
 	public function correos($id){
 		try{
 			$datos['encuestas']=$this->m_encuestas->getEncuesta($id);
@@ -171,17 +180,34 @@ class Coordinador extends CI_Controller {
 			$is_sended = $this->m_email->send( $param['to'], $param['subject'], $param['body'] );
 			
 			if ( $is_sended ){
-				// echo "Succes sended email";
-				// $this->load->view('correo');
+
 			}
 			else{
 				echo "failed sended email";
 			}
-			// $this->load->view('correo');
 
 		}catch(Exception $e){
 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
 		}
+	}
+	
+	public function get_encuesta(){
+		if($this->input->post()){
+			$datos = ($this->input->post());
+			$valores = array_values($datos);
+			echo '<br>';
+			for($i=0; $i<30; $i++){
+				$valor1 = $valores[$i];
+				$valor2 = $valores[$i+1];
+				$this->m_encuestas->almacenar($valor1,$valor2);
+				$i=$i+1;
+			}
+			echo 'Tus respuestas han sido guardadas correctamente'; exit;
+		}
+		else{
+			echo 'No hago nada'; exit;
+		}
+		
 	}
 	
 	public function send_mail(){
